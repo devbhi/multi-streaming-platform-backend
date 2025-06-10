@@ -33,7 +33,10 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-// Routes
+//
+app.get("/", (req, res) => {
+  res.send("Welcome to the Multi-Streaming Platform API");
+});
 app.post("/signup", async (req, res) => {
   try {
     const { email, password } = req.body;
